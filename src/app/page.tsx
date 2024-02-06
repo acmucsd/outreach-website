@@ -1,5 +1,8 @@
+
 import styles from './page.module.scss';
 import Image from 'next/image';
+
+
 
 export default function Home() {
   return (
@@ -11,5 +14,6 @@ export default function Home() {
         <h1>Welcome to ACM's static site template!</h1>
       </div>
     </main>
+    
   );
 }

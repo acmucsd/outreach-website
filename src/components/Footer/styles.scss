@@ -2,23 +2,31 @@
 
 .footer {
   width: 100%;
-  height: 100%;
   background-color: colors.$green;
   color: colors.$white;
-  z-index: 0;
-  position: relative;
-}
-.footerContainer {
-  padding-bottom: 60px;
-  display: flex;
-  justify-content: center;
-}
-.footerContents {
-  h2 {
-    font-size: 42px;
-    font-weight: 700;
-    width: 100%;
-    text-align: center;
-    padding-top: 56px;
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10rem 0;
+    margin: auto;
+
+  .findUs {
+
   }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .socialInfo {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+}
 }

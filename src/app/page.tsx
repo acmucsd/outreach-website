@@ -11,7 +11,7 @@ export default function Home() {
         <Image src="/acm-logo.png" width={100} height={100} alt="ACM Logo" />
       </div>
       <div>
-        <h1>Welcome to ACM's static site template!</h1>
+        <h1>Welcome to ACM&apos;s static site template!</h1>
       </div>
     </main>
     

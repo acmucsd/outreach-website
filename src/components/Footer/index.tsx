@@ -2,22 +2,39 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./styles.scss";
+import MailIcon from "@/public/mail-icon.svg";
+import InstagramLogo from "@/public/instagram-logo.svg";
+import DiscordIcon from "@/public/discord-icon.svg";
 
 
 const Footer: React.FC = () => {
-  // const [email, setEmail] = useState("");
   return (
-    <div className = "footer">
-        <div className="footerContainer">
-            <div className="footerContents">
-                
-                <div className="footerContents__wrapper">
-                  <h1>Find us here!</h1>
-                    <p>Interested in learning more?</p>
-                    <p>Reach out to get connected, or explore our socials to get a sense of who we are as a community!</p>
-                </div>
-            </div>
+    <div className="footer">
+      <div className="footerContent">
+        <div className="findUs">
+          <h1>Find us here!</h1>
+          <p>Interested in learning more?</p>
+          <p>Reach out to get connected, or explore our socials to get a sense of who we are as a community!</p>
         </div>
+        <div className="socials">
+          <div className="socialInfo">
+            <Image src="/mail-icon.svg" width={50} height={50} alt="Mail Icon" />
+            {/* <MailIcon /> */}
+            <p>Send us an inquiry</p>
+          </div>
+          
+          <div className="socialInfo">
+            <Image src="/instagram-logo.svg" width={50} height={50} alt="Instagram Logo" />
+            {/* <InstagramLogo /> */}
+            <p>Follow us for updates</p>
+          </div>
+          
+          <div className="socialInfo">
+            <Image src="/discord-icon.svg" width={50} height={50} alt="Discord Icon" />
+            <p>Join the discussion</p>
+          </div>
+        </div>
+      </div>
     </div>
     
   );

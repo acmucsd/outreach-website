@@ -1,0 +1,67 @@
+@use 'src/styles/vars.scss' as vars;
+
+.footer {
+  width: 100%;
+  background-color: vars.$green;
+  color: vars.$white;
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 7rem 0;
+    margin: auto;
+
+    @media screen and (width <= vars.$breakpoint) {
+      flex-direction: column;
+      gap: 1.75rem;
+      padding: 3rem 0;
+      align-items: center;
+      text-align: center;
+    }
+
+    .findUs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 40rem;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @media screen and (width <= vars.$breakpoint) {
+          .subdescription {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      min-width: 22rem;
+
+      .socialInfo {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+        align-items: center;
+
+        @media screen and (width <= vars.$breakpoint) {
+          .socialText {
+            display: none;
+          }
+        }
+      }
+
+      @media screen and (width <= vars.$breakpoint) {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  }
+}

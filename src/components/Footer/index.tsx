@@ -1,10 +1,5 @@
-import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import './styles.scss';
-import MailIcon from '@/public/mail-icon.svg';
-import InstagramLogo from '@/public/instagram-logo.svg';
-import DiscordIcon from '@/public/discord-icon.svg';
 
 const Footer: React.FC = () => {
   return (

@@ -1,4 +1,3 @@
-'use client';
 import './globals.css';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';

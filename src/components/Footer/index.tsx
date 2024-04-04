@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <Typography variant="display/medium">Find us here!</Typography>
           <div className={styles.description}>
             <Typography variant="subheading">Interested in learning more?</Typography>
-            <Typography variant="subheading">
+            <Typography variant="subheading" className={styles.subdescription}>
               Reach out to get connected, or explore our socials to get a sense of who we are as a
               community!
             </Typography>
@@ -21,18 +21,24 @@ const Footer: React.FC = () => {
           <div className={styles.socialInfo}>
             <Image src="/mail-icon.svg" width={50} height={50} alt="Mail Icon" />
             {/* <MailIcon /> */}
-            <Typography variant="subheading">Send us an inquiry</Typography>
+            <Typography variant="subheading" className={styles.socialText}>
+              Send us an inquiry
+            </Typography>
           </div>
 
           <div className={styles.socialInfo}>
             <Image src="/instagram-logo.svg" width={50} height={50} alt="Instagram Logo" />
             {/* <InstagramLogo /> */}
-            <Typography variant="subheading">Follow us for updates</Typography>
+            <Typography variant="subheading" className={styles.socialText}>
+              Follow us for updates
+            </Typography>
           </div>
 
           <div className={styles.socialInfo}>
             <Image src="/discord-icon.svg" width={50} height={50} alt="Discord Icon" />
-            <Typography variant="subheading">Join the discussion</Typography>
+            <Typography variant="subheading" className={styles.socialText}>
+              Join the discussion
+            </Typography>
           </div>
         </div>
       </div>

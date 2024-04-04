@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { CSSProperties, HTMLAttributes, PropsWithChildren } from 'react';
+import styles from './style.module.scss';
 
 // shared
 type Variant = 'display/medium' | 'display/small' | 'subheading' | 'body' | 'label';
@@ -9,42 +10,23 @@ type ComponentType = 'p' | 'span' | 'div';
 interface TypographyProps extends HTMLAttributes<HTMLElement> {
   variant: Variant;
   component?: ComponentType;
-  style?: CSSProperties;
   // This is used if/when the component is 'a'.
   href?: string;
+  className?: string;
 }
 
-const variantToCSS = (variant: Variant): CSSProperties => {
+const variantToCSS = (variant: Variant): string => {
   switch (variant) {
     case 'display/medium':
-      return {
-        fontSize: '3rem',
-        fontWeight: 500,
-      };
+      return styles.displayMedium;
     case 'display/small':
-      return {
-        fontSize: '2rem',
-        fontWeight: 400,
-      };
+      return styles.displaySmall;
     case 'subheading':
-      return {
-        fontSize: '1.5rem',
-        fontWeight: 400,
-        lineHeight: '2rem',
-        letterSpacing: '0.015rem',
-      };
+      return styles.subheading;
     case 'body':
-      return {
-        fontSize: '1.375rem',
-        fontWeight: 400,
-        lineHeight: '1.75rem',
-      };
+      return styles.body;
     case 'label':
-      return {
-        fontSize: '1rem',
-        fontWeight: 400,
-        lineHeight: '1.5rem',
-      };
+      return styles.label;
   }
 };
 
@@ -59,16 +41,13 @@ const variantToCSS = (variant: Variant): CSSProperties => {
  * @returns styled typography component
  */
 const Typography = (props: PropsWithChildren<TypographyProps>) => {
-  const { variant, component, style, children, ...restProps } = props;
+  const { variant, component, children, className, ...restProps } = props;
 
   if (restProps.href) {
     return (
       <Link
         href={restProps.href}
-        style={{
-          ...variantToCSS(variant),
-          ...style, // other styles can be customized via style prop
-        }}
+        className={`${variantToCSS(variant)} ${className || ''}`}
         {...restProps}
       >
         {children}
@@ -79,13 +58,7 @@ const Typography = (props: PropsWithChildren<TypographyProps>) => {
   const Component = component || 'div';
 
   return (
-    <Component
-      style={{
-        ...variantToCSS(variant),
-        ...style, // other styles can be customized via style prop
-      }}
-      {...restProps}
-    >
+    <Component className={`${variantToCSS(variant)} ${className || ''}`} {...restProps}>
       {children}
     </Component>
   );

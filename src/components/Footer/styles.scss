@@ -1,4 +1,4 @@
-@use "src/styles/colors.scss" as colors;
+@use 'src/styles/colors.scss' as colors;
 
 .footer {
   width: 100%;
@@ -12,21 +12,20 @@
     padding: 10rem 0;
     margin: auto;
 
-  .findUs {
+    .findUs {
+    }
 
-  }
-
-  .socials {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    .socialInfo {
+    .socials {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 1.5rem;
-      align-items: center;
+
+      .socialInfo {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center;
+      }
     }
   }
-}
 }

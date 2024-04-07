@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 2rem;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .involvedCards {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+}

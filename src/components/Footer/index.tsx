@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styles from './style.module.scss';
 import Typography from '../Typography';
-import InstagramIcon from '@/public/instagram-logo.svg';
 
 const Footer: React.FC = () => {
   return (

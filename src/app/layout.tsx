@@ -6,8 +6,9 @@ import Footer from '@/components/Footer';
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
-  title: 'ACM Static Site Template',
-  description: 'Template for making ACM websites!',
+  title: 'ACM Outreach at UCSD',
+  description:
+    'Welcome to ACM Outreach at UCSD, where our mission is to ignite a passion for computing and STEM among K-12 students, with a special focus on those who are underrepresented in the computing community.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

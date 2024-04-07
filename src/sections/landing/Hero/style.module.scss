@@ -6,7 +6,6 @@
   grid-template-columns: 1fr minmax(auto, 400px);
   align-items: center;
   grid-gap: 3rem;
-  // min-height: min(100vh, 1080px);
 
   @media screen and (width < 1100px) {
     grid-template-areas:

@@ -37,15 +37,15 @@
   }
 
   .pictures {
-    gap: 1rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    grid-gap: 2rem;
     padding-top: 1.5rem;
-    flex-wrap: wrap;
 
     .picture {
       height: 100%;
       width: auto;
+      aspect-ratio: 640 / 480;
     }
 
     @media screen and (width < vars.$breakpoint) {

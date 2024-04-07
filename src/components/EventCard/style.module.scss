@@ -1,0 +1,23 @@
+.card {
+  width: 22.5rem;
+}
+
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 22.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #c3c6cf;
+  background-color: #faf9fc;
+  overflow: hidden;
+
+  .picture {
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+}

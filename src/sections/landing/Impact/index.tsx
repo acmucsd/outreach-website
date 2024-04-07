@@ -35,22 +35,22 @@ export default function Impact() {
       <div className={styles.pictures}>
         <Image
           src="/impact/impact1.png"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="hi"
           className={styles.picture}
         />
         <Image
           src="/impact/impact2.png"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="hi"
           className={styles.picture}
         />
         <Image
           src="/impact/impact3.jpg"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="hi"
           className={styles.picture}
         />

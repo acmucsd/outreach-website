@@ -6,12 +6,13 @@ interface EventCardProps {
   image: string;
   children: ReactNode;
   className?: string;
+  aspectRatio?: number;
 }
 
-const Card = ({ image, children, className }: EventCardProps) => {
+const Card = ({ image, children, className, aspectRatio }: EventCardProps) => {
   return (
     <div className={`${styles.card} ${className || ''}`}>
-      <div className={styles.picture}>
+      <div className={styles.picture} style={{aspectRatio}}>
         <Image src={image} alt="Event image" objectFit="cover" fill />
       </div>
       <div className={styles.cardContent}>{children}</div>

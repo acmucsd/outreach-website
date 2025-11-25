@@ -5,6 +5,10 @@ import EventCard from '@/components/EventCard';
 import events from './events';
 
 export default function Events() {
+  // HIDING FOR NOW
+  const hidden = true;
+  if (hidden) return null;  
+
   return (
     <div className={styles.container}>
       <div className={styles.description}>

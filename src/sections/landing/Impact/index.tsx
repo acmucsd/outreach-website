@@ -15,19 +15,19 @@ export default function Impact() {
       <div className={styles.statistics}>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            5
+            5+
           </Typography>
           <Typography variant="subheading">schools collaborated</Typography>
         </div>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            100+
+            300+
           </Typography>
           <Typography variant="subheading">students taught</Typography>
         </div>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            5
+            10+
           </Typography>
           <Typography variant="subheading">events hosted</Typography>
         </div>

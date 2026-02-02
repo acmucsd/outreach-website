@@ -1,49 +1,47 @@
 @use 'src/styles/vars.scss' as vars;
 .navbar {
-    width: 100%;
-    
-    
-    // padding: 0 2rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    .navbarContent {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        margin: auto;
-        padding: 1rem 0;
-        @media screen and (width <= vars.$breakpoint) {
-            width: 90%;
-        }
-    }
+  width: 100%;
 
+  // padding: 0 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .navbarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0;
+    @media screen and (width <= vars.$breakpoint) {
+      width: 90%;
+    }
+  }
 }
 .left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    @media screen and (width <= vars.$breakpoint) {
-        gap: 1rem;
-    }
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  @media screen and (width <= vars.$breakpoint) {
+    gap: 1rem;
+  }
 }
 
 .navLink {
-    background: none;
-    border: none;
-    cursor: pointer;    
-    padding: 0.5rem 1rem;
-    transition: opacity 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s;
 
-    &:hover {
-        opacity: 0.7;
-    }
+  &:hover {
+    opacity: 0.7;
+  }
 }

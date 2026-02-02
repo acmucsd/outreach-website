@@ -5,7 +5,7 @@ import GetInvolvedCard from '@/components/InvolvedCard';
 
 export default function GetInvolved() {
   return (
-    <div className={styles.container} id='get-involved'>
+    <div className={styles.container} id="get-involved">
       <Typography variant="display/medium">Get Involved</Typography>
       <div className={styles.description}>
         <div className={styles.wrapper}>

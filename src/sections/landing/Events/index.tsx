@@ -7,7 +7,7 @@ import events from './events';
 export default function Events() {
   // HIDING FOR NOW
   const hidden = true;
-  if (hidden) return null;  
+  if (hidden) return null;
 
   return (
     <div className={styles.container}>

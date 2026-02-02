@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Impact() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='impact'>
       <div className={styles.description}>
         <Typography variant="display/medium">Our Impact</Typography>
         <Typography variant="subheading">

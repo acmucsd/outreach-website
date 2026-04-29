@@ -1,6 +1,7 @@
 import Typography from '@/components/Typography';
 import styles from './style.module.scss';
 import Image from 'next/image';
+import impact from './impact';
 
 export default function Impact() {
   return (
@@ -8,26 +9,26 @@ export default function Impact() {
       <div className={styles.description}>
         <Typography variant="display/medium">Our Impact</Typography>
         <Typography variant="subheading">
-          We have reached 5 different schools within the San Diego community, enlightening kids with
+          We have reached {impact.organizations} different organizations within the San Diego community, enlightening kids with
           fun STEM education and exposure to computer science. Join us to make CS more equitable!
         </Typography>
       </div>
       <div className={styles.statistics}>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            5
+            {impact.organizations}
           </Typography>
-          <Typography variant="subheading">schools collaborated</Typography>
+          <Typography variant="subheading">organizations collaborated</Typography>
         </div>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            100+
+            {impact.students}
           </Typography>
           <Typography variant="subheading">students taught</Typography>
         </div>
         <div className={styles.statistic}>
           <Typography variant="display/medium" className={styles.number}>
-            5
+            {impact.events}
           </Typography>
           <Typography variant="subheading">events hosted</Typography>
         </div>

@@ -8,17 +8,20 @@ interface EventCardProps {
   event: { title: string; date: string; location: string };
 }
 
-const EventCard = ({ image, event: { title, date, location } }: EventCardProps) => {
+const EventCard = ({ image, event: { title, date, location, students } }: EventCardProps) => {
   return (
     <Card image={image} className={styles.card}>
       <Typography variant="body" className={styles.heading}>
         {title}
       </Typography>
       <Typography variant="label" className={styles.date}>
-        {date}
+        Date: {date}
       </Typography>
       <Typography variant="label" className={styles.location}>
-        {location}
+        Location: {location}
+      </Typography>
+      <Typography variant="label" className={styles.students}>
+        Number of Students: {students}
       </Typography>
     </Card>
   );

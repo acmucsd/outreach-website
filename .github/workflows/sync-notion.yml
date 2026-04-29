@@ -1,0 +1,43 @@
+name: sync-notion
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Sync Notion content
+        env:
+          OUTREACH_NOTION_API_KEY: ${{ secrets.OUTREACH_NOTION_API_KEY }}
+          OUTREACH_WORKSHOP_DATA_SOURCE_ID: ${{ secrets.OUTREACH_WORKSHOP_DATA_SOURCE_ID }}
+        run: yarn sync:notion
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No content changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts
+          git commit -m "chore: sync notion content"
+          git push

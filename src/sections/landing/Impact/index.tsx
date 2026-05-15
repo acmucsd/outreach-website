@@ -5,57 +5,59 @@ import impact from './impact';
 
 export default function Impact() {
   return (
-    <div className={styles.container}>
-      <div className={styles.description}>
-        <Typography variant="display/medium">Our Impact</Typography>
-        <Typography variant="subheading">
-          We have reached {impact.organizations} different organizations within the San Diego community, enlightening kids with
-          fun STEM education and exposure to computer science. Join us to make CS more equitable!
-        </Typography>
-      </div>
-      <div className={styles.statistics}>
-        <div className={styles.statistic}>
-          <Typography variant="display/medium" className={styles.number}>
-            {impact.organizations}
+    <section id="impact">
+      <div className={styles.container}>
+        <div className={styles.description}>
+          <Typography variant="display/medium">Our Impact</Typography>
+          <Typography variant="subheading">
+            We have reached {impact.organizations} different organizations within the San Diego community, enlightening kids with
+            fun STEM education and exposure to computer science. Join us to make CS more equitable!
           </Typography>
-          <Typography variant="subheading">organizations collaborated</Typography>
         </div>
-        <div className={styles.statistic}>
-          <Typography variant="display/medium" className={styles.number}>
-            {impact.students}
-          </Typography>
-          <Typography variant="subheading">students taught</Typography>
+        <div className={styles.statistics}>
+          <div className={styles.statistic}>
+            <Typography variant="display/medium" className={styles.number}>
+              {impact.organizations}
+            </Typography>
+            <Typography variant="subheading">organizations collaborated</Typography>
+          </div>
+          <div className={styles.statistic}>
+            <Typography variant="display/medium" className={styles.number}>
+              {impact.students}
+            </Typography>
+            <Typography variant="subheading">students taught</Typography>
+          </div>
+          <div className={styles.statistic}>
+            <Typography variant="display/medium" className={styles.number}>
+              {impact.events}
+            </Typography>
+            <Typography variant="subheading">events hosted</Typography>
+          </div>
         </div>
-        <div className={styles.statistic}>
-          <Typography variant="display/medium" className={styles.number}>
-            {impact.events}
-          </Typography>
-          <Typography variant="subheading">events hosted</Typography>
+        <div className={styles.pictures}>
+          <Image
+            src="/impact/impact1.png"
+            width={200}
+            height={200}
+            alt="hi"
+            className={styles.picture}
+          />
+          <Image
+            src="/impact/impact2.png"
+            width={200}
+            height={200}
+            alt="hi"
+            className={styles.picture}
+          />
+          <Image
+            src="/impact/impact3.jpg"
+            width={200}
+            height={200}
+            alt="hi"
+            className={styles.picture}
+          />
         </div>
       </div>
-      <div className={styles.pictures}>
-        <Image
-          src="/impact/impact1.png"
-          width={200}
-          height={200}
-          alt="hi"
-          className={styles.picture}
-        />
-        <Image
-          src="/impact/impact2.png"
-          width={200}
-          height={200}
-          alt="hi"
-          className={styles.picture}
-        />
-        <Image
-          src="/impact/impact3.jpg"
-          width={200}
-          height={200}
-          alt="hi"
-          className={styles.picture}
-        />
-      </div>
-    </div>
+    </section>
   );
 }

@@ -3,10 +3,11 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const links = [
-    { name: 'Home', href: '#hero' },
+    { name: 'About Us', href: '#hero' },
     { name: 'Impact', href: '#impact' },
     { name: 'Events', href: '#events' },
     { name: 'Get Involved', href: '#involved' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (

@@ -13,7 +13,7 @@ interface GetInvolvedCard {
 
 const GetInvolvedCard = ({ image, title, description, link }: GetInvolvedCard) => {
   return (
-    <Card image={image}>
+    <Card images={[image]}>
       <div className={styles.cardContent}>
         <div>
           <Typography variant="display/small" className={styles.heading}>

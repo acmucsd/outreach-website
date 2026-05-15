@@ -1,7 +1,9 @@
 const events = [
   {
       images: [
-        "/events/default.png"
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/2.jpg",
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/1.jpg",
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/0.jpg"
       ],
       event: {
         title: "Python @ Bethune",
@@ -12,7 +14,7 @@ const events = [
     },
   {
       images: [
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/0.png"
+        "/events/default.png"
       ],
       event: {
         title: "App Dev @ WIC Girls’ Day Out",

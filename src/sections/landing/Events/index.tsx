@@ -16,7 +16,7 @@ export default function Events() {
       <div className={styles.wrapper}>
         <div className={styles.eventGrid}>
           {events.map((item, index) => (
-            <EventCard key={index} {...item} />
+            <EventCard key={index} eventImages={item.images} event={item.event}/>
           ))}
         </div>
       </div>

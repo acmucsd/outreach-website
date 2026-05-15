@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import styles from './style.module.scss';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 interface EventCardProps {
-  image: string;
+  images: string[];
   children: ReactNode;
   className?: string;
 }
 
-const Card = ({ image, children, className }: EventCardProps) => {
+const Card = ({ images, children, className }: EventCardProps) => {
+  const imageSrc = images?.[0] || '/events/default.png'
   return (
     <div className={`${styles.card} ${className || ''}`}>
       <div className={styles.picture}>
-        <Image src={image} alt="Event image" objectFit="cover" fill />
+        <Image src={imageSrc} alt="Event image" objectFit="cover" fill />
       </div>
       <div className={styles.cardContent}>{children}</div>
     </div>

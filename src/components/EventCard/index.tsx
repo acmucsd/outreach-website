@@ -4,13 +4,13 @@ import Typography from '../Typography';
 import Card from '../Card';
 
 interface EventCardProps {
-  image: string;
-  event: { title: string; date: string; location: string };
+  eventImages: string[];
+  event: { title: string; date: string; location: string, students: number };
 }
 
-const EventCard = ({ image, event: { title, date, location, students } }: EventCardProps) => {
+const EventCard = ({ eventImages, event: { title, date, location, students } }: EventCardProps) => {
   return (
-    <Card image={image} className={styles.card}>
+    <Card images={eventImages} className={styles.card}>
       <Typography variant="body" className={styles.heading}>
         {title}
       </Typography>

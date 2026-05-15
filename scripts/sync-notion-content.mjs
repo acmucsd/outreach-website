@@ -1,6 +1,9 @@
-import { writeFile } from 'node:fs/promises';
+import { writeFile, mkdir, rmdir } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import { createWriteStream } from 'node:fs';
+import { Readable } from 'node:stream';
+import { finished } from 'node:stream/promises';
 import { Client } from "@notionhq/client"
 
 const root = process.cwd();
@@ -10,6 +13,8 @@ const config = {
   dataSourceId: process.env.OUTREACH_WORKSHOP_DATA_SOURCE_ID,
   eventsOutput: 'src/sections/landing/Events/events.ts',
   impactOutput: 'src/sections/landing/Impact/impact.ts',
+  imageExtensions: ['.jpg', '.jpeg', '.png'],
+  eventImagesDirectory: 'public/events/pictures'
 };
 
 if (!config.token || !config.dataSourceId) {
@@ -51,6 +56,51 @@ const getNumStudents = (attendeeProperty) => {
 	return students;
 }
 
+const getFiles = async (fileProperty, eventID) => {
+	// Make directory for event
+	const eventDir = path.join(config.eventImagesDirectory,eventID);
+	await mkdir(eventDir, {recursive: true});
+
+	const files = fileProperty.files
+	var paths = [];
+
+	// Download each image to events
+	await Promise.all(files.map(async (item, index) => {
+		// Check if image extension
+		const ext = path.extname(item.name).toLowerCase();
+		if (!config.imageExtensions.includes(ext)) {
+			return;
+		}
+
+		const fileUrl = item.file.url;
+		// Check if file url not null
+		if(!fileUrl) {
+			return;
+		}
+
+		const fileName = `${index}${ext}`;
+		const localPath = path.join(root,eventDir,fileName);
+		const publicPath = `/${config.eventImagesDirectory.replace('public/', '')}/${eventID}/${fileName}`;
+		
+		// Download
+		try {
+			const res = await fetch(fileUrl);
+			if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+			const fileStream = createWriteStream(localPath);
+			await finished(Readable.fromWeb(res.body).pipe(fileStream));
+			paths.push(publicPath);
+		} catch(e) {
+			console.error(`Failed downloading file ${index} for event ${eventID}:`, e.message);
+		}
+	}))
+
+	// Fill in default if no image
+	if (paths.length == 0) {
+		paths.push("/events/default.png")
+	}
+	return paths;
+}
+
 const collectEvents = async () => {
 	const events = [];
 	let cursor;
@@ -79,17 +129,19 @@ const collectEvents = async () => {
 		}
 
 		// Parse results to get needed values
-		const processedEvents = events.map((e) => {
-			// Figure out images later
-			return {
-				image: "/events/event2.png",
-				date: getDateText(getPropertyValue(e,"Date")),
-				location: getLocationText(getPropertyValue(e,"Location")),
-				title: getTitleText(getPropertyValue(e,"Workshop")),
-				organization: getOrganizationText(getPropertyValue(e,"Organization")),
-				students: getNumStudents(getPropertyValue(e,"Attendees"))
-			}
-		})
+		const processedEvents = await Promise.all(
+			events.map(async (e) => {
+				return {
+					id: e.id,
+					images: await getFiles(getPropertyValue(e,"Pictures"),e.id),
+					date: getDateText(getPropertyValue(e,"Date")),
+					location: getLocationText(getPropertyValue(e,"Location")),
+					title: getTitleText(getPropertyValue(e,"Workshop")),
+					organization: getOrganizationText(getPropertyValue(e,"Organization")),
+					students: getNumStudents(getPropertyValue(e,"Attendees"))
+				}
+			})
+		)
 
 		return processedEvents;
 	} catch (error) {
@@ -98,19 +150,20 @@ const collectEvents = async () => {
 };
 
 
+// Get events
 const events = await collectEvents();
 
 // Build TS file for events
 const buildEvents = (events) => {
 	return events.map((e) => {
 		return {
-				image: e.image,
-				event: {
-					title: e.title,
-					date: e.date,
-					location: e.location,
-					students: e.students
-				}
+			images: e.images,
+			event: {
+				title: e.title,
+				date: e.date,
+				location: e.location,
+				students: e.students
+			}
 		}
 	});
 }

@@ -17,7 +17,14 @@ export default function Hero() {
           </Typography>
         </div>
         <div className={styles.logo}>
-          <Image src="/outreach-logo.svg" alt="Outreach Logo" fill />
+          <div className={styles.logoIcon}>
+            <Image src="/outreach-logo.svg" alt="Outreach Logo" fill sizes="400px" style={{ objectFit: 'contain' }} />
+          </div>
+          <div className={styles.subLogo}>
+            <Typography variant="body">by</Typography>
+            <Image src="/acm-logo.png" alt="ACM Logo" width={40} height={40} />
+            <Typography variant="body">at UC San Diego</Typography>
+          </div>
         </div>
       </div>
     </section>

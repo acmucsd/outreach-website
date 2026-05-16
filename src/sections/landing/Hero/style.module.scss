@@ -26,15 +26,29 @@
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 100%;
   grid-area: logo;
-  position: relative;
-  aspect-ratio: 1;
   max-width: 400px;
 
   @media screen and (width < 400px) {
     max-width: 300px;
-    max-height: 300px;
   }
+}
+
+.logoIcon {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.subLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }

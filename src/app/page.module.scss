@@ -1,13 +1,13 @@
 @use 'src/styles/vars.scss' as vars;
 
 .main {
-  padding: 9.25rem 0;
-  gap: 9.25rem;
   width: 80%;
   margin: auto;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 9.25rem 0;
+  gap: 9.25rem;
 
   @media screen and (width < vars.$breakpoint) {
     width: auto;

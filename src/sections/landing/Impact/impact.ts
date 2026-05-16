@@ -1,6 +1,6 @@
 const impact = {
   organizations: 8,
-  students: 275,
+  students: 277,
   events: 8
 };
 

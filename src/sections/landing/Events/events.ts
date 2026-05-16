@@ -1,12 +1,23 @@
 const events = [
   {
       images: [
-        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/5.jpg",
-        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/4.jpg",
-        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/3.jpg",
+        "/events/default.png"
+      ],
+      event: {
+        title: "AI: CV @ TritonHacks",
+        date: "05/16/2026",
+        location: "UCSD",
+        students: null
+      }
+    },
+  {
+      images: [
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/1.jpg",
         "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/0.jpg",
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/4.jpg",
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/5.jpg",
         "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/2.jpg",
-        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/1.jpg"
+        "/events/pictures/34f14391-5b12-804e-a562-c81098c7dac3/3.jpg"
       ],
       event: {
         title: "Python @ Bethune",
@@ -19,13 +30,13 @@ const events = [
       images: [
         "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/0.jpeg",
         "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/1.jpeg",
+        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/6.jpg",
+        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/8.jpg",
+        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/3.jpg",
+        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/9.jpg",
+        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/4.jpg",
         "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/7.jpg",
         "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/5.jpg",
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/9.jpg",
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/8.jpg",
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/4.jpg",
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/6.jpg",
-        "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/3.jpg",
         "/events/pictures/33a14391-5b12-8052-9a34-f4e3a9a26323/2.jpg"
       ],
       event: {
@@ -70,45 +81,45 @@ const events = [
     },
   {
       images: [
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/27.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/34.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/38.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/26.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/17.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/24.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/32.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/35.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/36.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/33.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/23.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/22.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/37.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/31.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/16.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/25.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/20.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/30.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/28.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/15.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/18.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/21.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/29.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/14.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/33.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/19.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/13.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/37.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/34.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/26.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/36.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/16.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/21.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/11.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/31.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/24.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/17.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/22.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/32.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/14.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/20.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/15.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/23.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/29.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/38.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/30.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/27.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/35.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/28.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/18.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/10.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/5.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/2.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/4.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/9.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/0.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/7.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/3.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/1.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/12.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/10.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/8.jpg",
         "/events/pictures/30614391-5b12-807a-a591-f1444b425617/6.jpg",
-        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/8.jpg"
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/13.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/12.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/3.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/4.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/7.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/9.jpg",
+        "/events/pictures/30614391-5b12-807a-a591-f1444b425617/1.jpg"
       ],
       event: {
         title: "Girl Scouts @ UCSD",
@@ -119,12 +130,12 @@ const events = [
     },
   {
       images: [
-        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/2.jpg",
-        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/3.jpg",
+        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/0.jpg",
         "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/5.jpg",
-        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/1.jpg",
         "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/4.jpg",
-        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/0.jpg"
+        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/3.jpg",
+        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/1.jpg",
+        "/events/pictures/30614391-5b12-8051-9cf5-f54421efd7d1/2.jpg"
       ],
       event: {
         title: "AI: CV @ Hoover",

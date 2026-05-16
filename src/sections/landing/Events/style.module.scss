@@ -1,3 +1,5 @@
+@use 'src/styles/vars.scss' as vars;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -11,19 +13,45 @@
     gap: 1rem;
   }
 
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pageButton {
+    border: 1px solid #c3c6cf;
+    background: #faf9fc;
+    color: #1a1a1a;
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      border-color: vars.$green;
+    }
+  }
+
+  .pageIndicator {
+    color: #666;
+  }
+
   .wrapper {
     width: 100%;
     min-width: 0;
-    max-height: 750px;
-    overflow-y: scroll;
 
     .eventGrid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(18rem, 22.5rem));
-      justify-content: center;
       gap: 1rem;
       padding: 1rem 0;
-      width: auto;
+      width: 100%;
+      max-width: 76rem;
+      margin: 0 auto;
+      min-width: 0;
     }
   }
 }

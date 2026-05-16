@@ -1,7 +1,7 @@
 const impact = {
-  organizations: 8,
+  organizations: 9,
   students: 277,
-  events: 8
+  events: 9
 };
 
 export default impact;

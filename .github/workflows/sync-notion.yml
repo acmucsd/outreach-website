@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-content:
@@ -14,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -30,14 +33,20 @@ jobs:
           OUTREACH_WORKSHOP_DATA_SOURCE_ID: ${{ secrets.OUTREACH_WORKSHOP_DATA_SOURCE_ID }}
         run: yarn sync:notion
 
-      - name: Commit changes
+      - name: Create Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_BRANCH: chore/sync-notion-content
         run: |
-          if git diff --quiet; then
+          if git diff --quiet -- src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts; then
             echo "No content changes."
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$PR_BRANCH"
           git add src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts
           git commit -m "chore: sync notion content"
-          git push
+          git push --force-with-lease origin "$PR_BRANCH"
+          node scripts/create-sync-pr.mjs

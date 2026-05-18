@@ -1,7 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './style.module.scss';
 import Image from 'next/image';
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const links = [
     { name: 'About Us', href: '#hero' },
     { name: 'Impact', href: '#impact' },
@@ -22,10 +26,21 @@ export default function Navbar() {
             <span className={styles.logoSubtitle}>ACM at UC San Diego</span>
           </div>
         </div>
-        <ul className={styles.navLinks}>
+        <button
+          type="button"
+          className={styles.menuButton}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className={styles.link}>
+              <a href={link.href} className={styles.link} onClick={() => setMenuOpen(false)}>
                 {link.name}
               </a>
             </li>

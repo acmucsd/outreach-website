@@ -22,7 +22,9 @@ export default function Hero() {
           </div>
           <div className={styles.subLogo}>
             <Typography variant="body">by</Typography>
-            <Image src="/acm-logo.png" alt="ACM Logo" width={40} height={40} />
+            <a href='https://acmucsd.com'>
+              <Image src="/acm-logo.png" alt="ACM Logo" width={50} height={50} />
+            </a>
             <Typography variant="body">at UC San Diego</Typography>
           </div>
         </div>

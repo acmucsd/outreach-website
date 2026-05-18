@@ -14,6 +14,7 @@
   border-bottom: 8px solid transparent;
   border-image-source: linear-gradient(to right, vars.$green, transparent);
   border-image-slice: 0 0 1 0; 
+  position: fixed;
 
   .container {
     max-width: 100%;
@@ -23,6 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
   }
 
   .logoContainer {
@@ -61,7 +63,7 @@
 
   .navLinks {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -76,6 +78,81 @@
       &:hover {
         color: vars.$green; // Brand color
       }
+    }
+  }
+
+  .menuButton {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba(53, 53, 53, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.55rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: #353535;
+    }
+  }
+
+  @media screen and (width <= 1024px) {
+    .container {
+      position: relative;
+    }
+
+    .menuButton {
+      display: flex;
+    }
+
+    .navLinks {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      min-width: 14rem;
+      border: 1px solid rgba(53, 53, 53, 0.12);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-0.5rem);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+      pointer-events: none;
+      z-index: 1001;
+    }
+
+    .open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  @media screen and (width < vars.$breakpoint) {
+    .logoSubtitle {
+      display: none;
+    }
+
+    .logoTitle {
+      font-size: 1.4rem;
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
     }
   }
 }

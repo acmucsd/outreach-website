@@ -33,6 +33,9 @@ jobs:
           OUTREACH_WORKSHOP_DATA_SOURCE_ID: ${{ secrets.OUTREACH_WORKSHOP_DATA_SOURCE_ID }}
         run: yarn sync:notion
 
+      - name: Lint
+        run: yarn lint
+
       - name: Create Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -19,7 +19,13 @@ export default function Navbar() {
       <div className={styles.container}>
         <div className={styles.logoContainer}>
           <a href="#hero" className={styles.icon}>
-            <Image src="/outreach-logo.svg" alt="Outreach" fill sizes="40px" style={{ objectFit: 'contain' }} />
+            <Image
+              src="/outreach-logo.svg"
+              alt="Outreach"
+              fill
+              sizes="40px"
+              style={{ objectFit: 'contain' }}
+            />
           </a>
           <div className={styles.logoText}>
             <span className={styles.logoTitle}>Outreach</span>
@@ -31,14 +37,14 @@ export default function Navbar() {
           className={styles.menuButton}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
+          onClick={() => setMenuOpen(open => !open)}
         >
           <span />
           <span />
           <span />
         </button>
         <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
-          {links.map((link) => (
+          {links.map(link => (
             <li key={link.href}>
               <a href={link.href} className={styles.link} onClick={() => setMenuOpen(false)}>
                 {link.name}

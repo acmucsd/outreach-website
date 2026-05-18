@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import impact from './impact';
 
-const STUDENT_BUCKET=25;
+const STUDENT_BUCKET = 25;
 
 export default function Impact() {
   return (
@@ -12,8 +12,9 @@ export default function Impact() {
         <div className={styles.description}>
           <Typography variant="display/medium">Our Impact</Typography>
           <Typography variant="subheading">
-            We have reached {impact.organizations} different organizations within the San Diego community, enlightening kids with
-            fun STEM education and exposure to computer science. Join us to make CS more equitable!
+            We have reached {impact.organizations} different organizations within the San Diego
+            community, enlightening kids with fun STEM education and exposure to computer science.
+            Join us to make CS more equitable!
           </Typography>
         </div>
         <div className={styles.statistics}>
@@ -25,7 +26,7 @@ export default function Impact() {
           </div>
           <div className={styles.statistic}>
             <Typography variant="display/medium" className={styles.number}>
-              {Math.floor(impact.students/STUDENT_BUCKET)*STUDENT_BUCKET}+
+              {Math.floor(impact.students / STUDENT_BUCKET) * STUDENT_BUCKET}+
             </Typography>
             <Typography variant="subheading">students taught</Typography>
           </div>

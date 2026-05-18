@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import Image from 'next/image';
 import styles from './style.module.scss';
 import { ReactNode, useState } from 'react';
@@ -15,11 +15,11 @@ const Card = ({ images, children, className }: EventCardProps) => {
   const hasMultipleImages = images && images.length > 1;
 
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
   };
 
   const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex(prevIndex => (prevIndex - 1 + images.length) % images.length);
   };
 
   return (
@@ -27,28 +27,24 @@ const Card = ({ images, children, className }: EventCardProps) => {
       <div className={styles.picture}>
         {hasImages ? (
           <>
-            <Image 
-              src={images[currentIndex]} 
-              alt={`Event image ${currentIndex + 1}`} 
-              objectFit="cover" 
-              fill 
+            <Image
+              src={images[currentIndex]}
+              alt={`Event image ${currentIndex + 1}`}
+              objectFit="cover"
+              fill
             />
-            
+
             {/* Show controls only if there are multiple images */}
             {hasMultipleImages && (
               <div className={styles.carouselControls}>
-                <button 
-                  onClick={prevImage} 
-                  className={styles.navButton} 
+                <button
+                  onClick={prevImage}
+                  className={styles.navButton}
                   aria-label="Previous image"
                 >
                   &#10094;
                 </button>
-                <button 
-                  onClick={nextImage} 
-                  className={styles.navButton} 
-                  aria-label="Next image"
-                >
+                <button onClick={nextImage} className={styles.navButton} aria-label="Next image">
                   &#10095;
                 </button>
               </div>

@@ -53,11 +53,11 @@ const EventCard = ({ eventImages, event: { title, date, location, students } }: 
       <Typography variant="label" className={styles.location}>
         Location: {location}
       </Typography>
-      {students && 
+      {students && (
         <Typography variant="label" className={styles.students}>
           Number of Students: {students}
         </Typography>
-      }
+      )}
     </Card>
   );
 };

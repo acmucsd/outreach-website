@@ -30,15 +30,15 @@ export default function Events() {
   }, [page, pageSize]);
 
   useEffect(() => {
-    setPage((current) => Math.min(current, totalPages - 1));
+    setPage(current => Math.min(current, totalPages - 1));
   }, [totalPages]);
 
   const goToPrevious = () => {
-    setPage((current) => (current - 1 + totalPages) % totalPages);
+    setPage(current => (current - 1 + totalPages) % totalPages);
   };
 
   const goToNext = () => {
-    setPage((current) => (current + 1) % totalPages);
+    setPage(current => (current + 1) % totalPages);
   };
 
   return (
@@ -57,19 +57,33 @@ export default function Events() {
             style={{ gridTemplateColumns: `repeat(${pageSize}, minmax(0, 1fr))` }}
           >
             {visibleEvents.map((item, index) => (
-              <EventCard key={`${item.event.title}-${index}`} eventImages={item.images} event={item.event} />
+              <EventCard
+                key={`${item.event.title}-${index}`}
+                eventImages={item.images}
+                event={item.event}
+              />
             ))}
           </div>
         </div>
 
         <div className={styles.toolbar}>
-          <button type="button" className={styles.pageButton} onClick={goToPrevious} aria-label="Previous events">
+          <button
+            type="button"
+            className={styles.pageButton}
+            onClick={goToPrevious}
+            aria-label="Previous events"
+          >
             Previous
           </button>
           <Typography variant="label" className={styles.pageIndicator}>
             {page + 1} / {totalPages}
           </Typography>
-          <button type="button" className={styles.pageButton} onClick={goToNext} aria-label="Next events">
+          <button
+            type="button"
+            className={styles.pageButton}
+            onClick={goToNext}
+            aria-label="Next events"
+          >
             Next
           </button>
         </div>

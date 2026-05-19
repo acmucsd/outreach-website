@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_BRANCH: chore/sync-notion-content
         run: |
-          if git diff --quiet -- src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts; then
+          if git diff --quiet -- src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts public/events/pictures; then
             echo "No content changes."
             exit 0
           fi
@@ -49,7 +49,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B "$PR_BRANCH"
-          git add src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts
+          git add src/sections/landing/Events/events.ts src/sections/landing/Impact/impact.ts public/events/pictures
           git commit -m "chore: sync notion content"
           git push --force-with-lease origin "$PR_BRANCH"
           node scripts/create-sync-pr.mjs

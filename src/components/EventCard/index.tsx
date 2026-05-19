@@ -11,8 +11,8 @@ interface EventCardProps {
 enum EventStatus {
   PAST = 'Past Event',
   TODAY = 'Happening Today',
-  UPCOMMING = 'Upcoming Event'
-};
+  UPCOMMING = 'Upcoming Event',
+}
 
 const parseEventDate = (date: string) => {
   const [month, day, year] = date.split('/').map(Number);

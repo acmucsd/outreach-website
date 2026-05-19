@@ -1,12 +1,38 @@
 .card {
-  width: 22.5rem;
+  width: 100%;
+}
+
+.status {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.upcoming {
+  background: #e7f4eb;
+  color: #116532;
+}
+
+.today {
+  background: #eef2ff;
+  color: #a38430;
+}
+
+.past {
+  background: #f3f4f6;
+  color: #4b5563;
 }
 
 .eventCard {
   display: flex;
   flex-direction: column;
-  flex: none;
-  width: 22.5rem;
+  flex: 1 1 auto;
+  width: 100%;
   border-radius: 0.75rem;
   border: 1px solid #c3c6cf;
   background-color: #faf9fc;

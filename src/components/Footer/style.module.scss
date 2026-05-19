@@ -57,6 +57,10 @@
           }
         }
       }
+      .highlight {
+        text-decoration: none;
+        color: inherit;
+      }
 
       @media screen and (width <= vars.$breakpoint) {
         flex-direction: row;

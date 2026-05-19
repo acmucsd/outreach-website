@@ -1,9 +1,11 @@
+@use 'src/styles/vars.scss' as vars;
+
 .container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-self: flex-start;
   width: 100%;
+  min-width: 0;
 
   .description {
     display: flex;
@@ -11,16 +13,45 @@
     gap: 1rem;
   }
 
-  .wrapper {
+  .toolbar {
     display: flex;
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pageButton {
+    border: 1px solid #c3c6cf;
+    background: #faf9fc;
+    color: #1a1a1a;
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      border-color: vars.$green;
+    }
+  }
+
+  .pageIndicator {
+    color: #666;
+  }
+
+  .wrapper {
+    width: 100%;
+    min-width: 0;
 
     .eventGrid {
-      padding: 1rem 0;
-      flex-direction: row;
+      display: grid;
       gap: 1rem;
-      display: flex;
-      overflow-x: auto;
+      padding: 1rem 0;
+      width: 100%;
+      max-width: 76rem;
+      margin: 0 auto;
+      min-width: 0;
     }
   }
 }

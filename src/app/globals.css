@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,500,600,700,800,900');
 
+html {
+  scroll-snap-type: y proximity;
+}
+
 html,
 body {
   font-family: 'DM Sans', sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+section[id] {
+  scroll-snap-align: start;
+  scroll-margin-top: 70px;
 }

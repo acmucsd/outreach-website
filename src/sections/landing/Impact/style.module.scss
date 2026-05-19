@@ -38,6 +38,7 @@
 
   .pictures {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, 320px);
     grid-gap: 2rem;
     padding-top: 1.5rem;

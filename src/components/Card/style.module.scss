@@ -1,7 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  flex: none;
+  flex: 1 1 auto;
+  width: 100%;
   border-radius: 0.75rem;
   border: 1px solid #c3c6cf;
   background-color: #faf9fc;
@@ -10,6 +11,38 @@
   .picture {
     aspect-ratio: 16 / 9;
     position: relative;
+    overflow: hidden;
+
+    .carouselControls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8px;
+      pointer-events: none; /* Prevents container from blocking image clicks */
+    }
+
+    .navButton {
+      pointer-events: auto; /* Re-enables clicks on the actual buttons */
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    }
   }
 
   .cardContent {

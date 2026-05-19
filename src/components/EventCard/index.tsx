@@ -8,6 +8,12 @@ interface EventCardProps {
   event: { title: string; date: string; location: string; students: number | null };
 }
 
+enum EventStatus {
+  PAST = 'Past Event',
+  TODAY = 'Happening Today',
+  UPCOMMING = 'Upcoming Event'
+};
+
 const parseEventDate = (date: string) => {
   const [month, day, year] = date.split('/').map(Number);
   if (!month || !day || !year) return null;
@@ -22,15 +28,15 @@ const getEventStatus = (date: string) => {
   const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
   const eventStart = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate());
 
-  if (eventStart.getTime() < todayStart.getTime()) return 'Past Event';
-  if (eventStart.getTime() > todayStart.getTime()) return 'Upcoming Event';
-  return 'Happening Today';
+  if (eventStart.getTime() < todayStart.getTime()) return EventStatus.PAST;
+  if (eventStart.getTime() > todayStart.getTime()) return EventStatus.UPCOMMING;
+  return EventStatus.UPCOMMING;
 };
 
-const getStatusClassName = (status: string | null) => {
-  if (status === 'Upcoming Event') return styles.upcoming;
-  if (status === 'Happening Today') return styles.today;
-  if (status === 'Past Event') return styles.past;
+const getStatusClassName = (status: EventStatus | null) => {
+  if (status === EventStatus.UPCOMMING) return styles.upcoming;
+  if (status === EventStatus.TODAY) return styles.today;
+  if (status === EventStatus.PAST) return styles.past;
   return styles.status;
 };
 

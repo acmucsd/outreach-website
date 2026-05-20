@@ -32,7 +32,7 @@ export default function Impact() {
           </div>
           <div className={styles.statistic}>
             <Typography variant="display/medium" className={styles.number}>
-              {impact.events}
+              {impact.events}+
             </Typography>
             <Typography variant="subheading">events hosted</Typography>
           </div>
